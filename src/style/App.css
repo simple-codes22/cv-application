@@ -1,0 +1,101 @@
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App {
+    position: fixed;
+    left:0;right:0;bottom:0;top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .3s ease-in-out;
+    animation: intro 10s ease-in-out alternate infinite;
+}
+
+.gen-base {
+    width: 500px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.153);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    transition: all .3s ease-in-out;
+}
+.title {
+    font-size: 27px;
+    transition: all .3s ease-in-out;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+    padding: 10px;
+}
+
+.input-cover {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.input-main {
+    width: 340px;
+    outline: 0;
+    border-radius: 0;
+    height: 20px;
+    font-family: var(--font-family);
+    border: 3px solid rgba(0, 0, 0, 0.377);
+    font-size: 15px;
+    padding: 6px;
+    transition: all .3s ease-in-out;
+}
+.input-main:focus {
+    border: 3px solid rgba(0, 0, 0, 0.921);
+}
+.decisions {
+    padding: 5px;
+}
+.btn {
+    width: 86px;
+    height: 38px;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0);
+    border: 3px solid rgba(0, 0, 0, 0.721);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+}
+.btn:hover {
+    background:rgba(0, 0, 0, 0.888);
+    color: rgba(255, 255, 255, 0.938)
+}
+
+.input-cover#practical {
+    margin: 5px;
+}
+
+.input-cover.from-to#practical {
+    flex-direction: row;
+}
+.input-cover.from-to#practical div {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.input-cover.from-to#practical div .input-main {
+    width: 100px;
+}
+
+@keyframes intro {
+    from {background-color: rgb(137, 255, 114)};
+    /* 50% {background-color: rgb(255, 83, 83)}; */
+    to {background-color: rgb(7, 42, 148);}
+}

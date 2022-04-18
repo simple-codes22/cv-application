@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
+import General from "./components/General";
+import Educational from "./components/Educational";
+import Practical from "./components/Practical";
+import { useState } from "react";
 
 function App() {
+  const [pages] = useState([<General />, <Educational />, <Practical />])
+  const [page, setPage] = useState(pages[0])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {page}
+      <div className='decisions'>
+        {page !== pages[0] ? 
+          <button className='btn' onClick={() => {
+            setPage(pages[pages.indexOf(page) - 1])
+          }}
+            >Previous
+          </button> 
+        : <></>}
+
+        {page !== pages[2] ? 
+          <button className='btn' onClick={() => {
+            setPage(pages[pages.indexOf(page) + 1])
+          }}>Next</button> : 
+          <button className='btn'>
+            Submit
+          </button>
+        }
+      </div>
     </div>
   );
 }
